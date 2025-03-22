@@ -27,6 +27,10 @@ import JsonLd from "./json-ld"
 import { useSearchParams, useRouter } from "next/navigation"
 import Link from "next/link"
 
+// Importar el componente HeadSEO
+import HeadSEO from "./head-seo"
+import SeoText from "./seo-text"
+
 // Importamos el mapa dinámicamente para evitar problemas de SSR
 const MapComponent = dynamic(() => import("./map-component"), {
   ssr: false,
@@ -295,9 +299,11 @@ export default function GeoLocator() {
     })
   }
 
+  // Añadir el componente HeadSEO justo después de JsonLd en el return
   return (
     <>
       <JsonLd />
+      <HeadSEO />
       <Toaster />
       <div className="container max-w-md mx-auto py-10">
         <Card>
@@ -564,6 +570,7 @@ export default function GeoLocator() {
             </div>
           </CardFooter>
         </Card>
+        <SeoText />
       </div>
     </>
   )
