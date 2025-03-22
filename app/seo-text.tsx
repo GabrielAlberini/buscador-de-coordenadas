@@ -1,6 +1,6 @@
 export default function SeoText() {
   return (
-    <div className="container max-w-md mx-auto py-6 px-4 text-sm text-muted-foreground">
+    <div className="container mx-auto py-6 px-4 text-sm text-muted-foreground md:max-w-2xl lg:max-w-4xl">
       <h2 className="text-lg font-semibold mb-2">¿Qué son las coordenadas GPS?</h2>
       <p className="mb-3">
         Las coordenadas GPS son un sistema de referencia que permite ubicar con precisión cualquier punto en la
@@ -45,6 +45,12 @@ export default function SeoText() {
         <li>Desarrollo de aplicaciones basadas en ubicación</li>
         <li>Documentación de lugares visitados</li>
       </ul>
+
+      <p className="text-xs mt-12 text-center">
+        Sitio desarrollado por <a href="https://linkedin.com/in/gabriel-alberini/" className="underline" target="_blank">
+          Gabriel Alberini
+        </a>
+      </p>
     </div>
   )
 }

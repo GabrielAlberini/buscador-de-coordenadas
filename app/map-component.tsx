@@ -63,6 +63,7 @@ export default function MapComponent({ position, locationName, mapType = "street
       center={position}
       zoom={13}
       style={{ height: "300px", width: "100%" }}
+      className="h-[250px] sm:h-[300px] md:h-[400px]"
       scrollWheelZoom={false}
       key={`${position[0]}-${position[1]}-${mapType}`} // Forzar re-render cuando cambian las props
     >

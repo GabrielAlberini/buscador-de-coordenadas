@@ -305,8 +305,8 @@ export default function GeoLocator() {
       <JsonLd />
       <HeadSEO />
       <Toaster />
-      <div className="container max-w-md mx-auto py-10">
-        <Card>
+      <div className="container mx-auto px-4 py-6 sm:py-10 md:max-w-2xl lg:max-w-4xl">
+        <Card className="w-full">
           <CardHeader>
             <CardTitle>Buscador de Coordenadas</CardTitle>
             <CardDescription>Encuentra coordenadas geográficas o información de ubicación.</CardDescription>
@@ -337,7 +337,7 @@ export default function GeoLocator() {
 
               <TabsContent value="reverse">
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-2 mb-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
                     <div>
                       <Label htmlFor="latitude">Latitud</Label>
                       <Input
@@ -366,8 +366,12 @@ export default function GeoLocator() {
               </TabsContent>
             </Tabs>
 
-            <div className="flex justify-between items-center mb-4">
-              <RadioGroup value={coordinateFormat} onValueChange={setCoordinateFormat} className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0 mb-4">
+              <RadioGroup
+                value={coordinateFormat}
+                onValueChange={setCoordinateFormat}
+                className="flex space-x-4 mb-2 sm:mb-0"
+              >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="decimal" id="decimal" />
                   <Label htmlFor="decimal">Decimal</Label>
@@ -396,9 +400,11 @@ export default function GeoLocator() {
                       <DialogTitle>Compartir ubicación</DialogTitle>
                       <DialogDescription>Copia este enlace para compartir la ubicación actual.</DialogDescription>
                     </DialogHeader>
-                    <div className="flex space-x-2">
-                      <Input value={shareUrl} readOnly />
-                      <Button onClick={copyShareUrl}>Copiar</Button>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <Input value={shareUrl} readOnly className="flex-1" />
+                      <Button onClick={copyShareUrl} className="sm:flex-shrink-0">
+                        Copiar
+                      </Button>
                     </div>
                   </DialogContent>
                 </Dialog>
@@ -465,7 +471,7 @@ export default function GeoLocator() {
 
             {results && (
               <div className="space-y-4 mt-4">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="bg-muted p-3 rounded-md relative">
                     <div className="text-sm font-medium text-muted-foreground">Latitud</div>
                     <div className="text-lg font-bold flex items-center">
@@ -508,7 +514,7 @@ export default function GeoLocator() {
 
                 {/* Información adicional */}
                 {results.address && (
-                  <div className="grid grid-cols-2 gap-2 text-sm mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm mb-4">
                     {results.address.country && (
                       <div>
                         <span className="font-medium">País:</span> {results.address.country}
@@ -550,7 +556,7 @@ export default function GeoLocator() {
               <Heart className="h-4 w-4 text-red-500" />
               <span>¿Te gusta esta aplicación? Apoya su desarrollo</span>
             </div>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
               <Link
                 href="https://link.mercadopago.com.ar/gabrielalberini"
                 target="_blank"
