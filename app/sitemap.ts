@@ -1,25 +1,12 @@
-import type { MetadataRoute } from "next"
+import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://tu-dominio.com",
-      lastModified: new Date(),
+      url: "https://www.coordenadas-gps.com.ar/",
+      lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
-      priority: 1,
+      priority: 1.0,
     },
-    {
-      url: "https://tu-dominio.com/about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://tu-dominio.com/contact",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-  ]
+  ];
 }
-

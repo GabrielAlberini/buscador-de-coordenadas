@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     title: "Buscador de Coordenadas GPS | Latitud y Longitud de Ciudades",
     description:
       "Encuentra fácilmente las coordenadas geográficas de cualquier lugar del mundo. Herramienta gratuita y precisa.",
-    images: ["https://coordenadas-gps.com.ar/twitter-image.jpg"],
+    images: ["https://coordenadas-gps.com.ar/icon.png"],
     site: "@coordenadasgps",
-    creator: "@coordenadasgps",
+    creator: "@gaboalberini",
   },
   robots: {
     index: true,
@@ -84,7 +84,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <head />
+      <head>
+        <link rel="shortcut icon" href="icon.png" type="image/png" />
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <main className="min-h-screen bg-background">{children}</main>
